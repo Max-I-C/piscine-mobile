@@ -1,0 +1,62 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(WeatherApp());
+}
+
+class WeatherApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Weather App",
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: TextField(
+            decoration: InputDecoration(
+              hintText: "Search a city",
+              border: InputBorder.none,
+            ),
+          ),z
+          actions: [
+            IconButton(
+              onPressed: () {}, 
+              icon: Icon(Icons.my_location)
+            ),
+          ],
+        ),
+        body: TabBarView(
+          children: [
+            Center(child: Text("Currently")),
+            Center(child: Text("Today")),
+            Center(child: Text("Weekly")),
+          ],
+        ),
+        bottomNavigationBar: BottomAppBar(
+          child: TabBar(
+            tabs: [
+              Tab(text: "Currently", icon: Icon(Icons.timer)),
+              Tab(text: "Today", icon: Icon(Icons.today)),
+              Tab(text: "Weekly", icon: Icon(Icons.calendar_month)),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
