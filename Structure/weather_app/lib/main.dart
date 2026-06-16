@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
               hintText: "Search a city",
               border: InputBorder.none,
             ),
-          ),z
+          ),
           actions: [
             IconButton(
               onPressed: () {}, 
