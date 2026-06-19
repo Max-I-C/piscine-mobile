@@ -43,7 +43,11 @@ class _HomePageState extends State<HomePage> {
           ),
           actions: [
             IconButton(
-              onPressed: () {}, 
+              onPressed: () {
+                setState(() {
+                  city = "Geolocation";
+                });
+              }, 
               icon: Icon(Icons.my_location)
             ),
           ],
